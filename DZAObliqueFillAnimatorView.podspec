@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
                        A custom view that haves an oblique transparent cut on the top and it can be filled with an animated circle
                        DESC
   s.homepage         = "https://github.com/Dzamir/DZAObliqueFillAnimatorView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots      = "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/1.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/2.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/3.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/demo.gif"
   s.license          = 'MIT'
   s.author           = { "Davide Di Stefano" => "dzamirro@gmail.com" }
   s.source           = { :git => "https://github.com/Dzamir/DZAObliqueFillAnimatorView.git", :tag => s.version.to_s }
