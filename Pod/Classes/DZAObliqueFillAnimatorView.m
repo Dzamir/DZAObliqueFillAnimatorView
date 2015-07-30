@@ -113,6 +113,10 @@
     {
         [_displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
         _isAnimating = NO;
+        if (self.delegate)
+        {
+            [self.delegate obliqueFillAnimatorViewDidCompleteAnimation:self];
+        }
     }
 }
 

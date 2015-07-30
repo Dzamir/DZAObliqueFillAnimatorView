@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class DZAObliqueFillAnimatorView;
+
+@protocol DZAObliqueFillAnimatorViewDelegate <NSObject>
+
+-(void) obliqueFillAnimatorViewDidCompleteAnimation:(DZAObliqueFillAnimatorView *) obliqueFillAnimatorView;
+
+@end
+
 IB_DESIGNABLE
 @interface DZAObliqueFillAnimatorView : UIView
 
@@ -19,6 +27,9 @@ IB_DESIGNABLE
 @property (readwrite, nonatomic) IBInspectable BOOL startsFromLeft;
 
 @property (readonly, nonatomic) BOOL isAnimating;
+
+@property (nonatomic, assign) id<DZAObliqueFillAnimatorViewDelegate> delegate;
+
 -(void) animateWithDuration:(double) duration;
 
 @end
