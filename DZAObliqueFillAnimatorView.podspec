@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "Custom view with an oblique transparent cut on the top"
   s.description      = <<-DESC
-                       A custom view that haves an oblique transparent cut on the top and it can be filled with an animated circle
+                       A custom view that has an oblique transparent cut on the top and it can be filled with an animated circle
                        DESC
   s.homepage         = "https://github.com/Dzamir/DZAObliqueFillAnimatorView"
   s.screenshots      = "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/1.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/2.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/3.png", "https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/demo.gif"

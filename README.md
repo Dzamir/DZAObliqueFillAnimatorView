@@ -1,6 +1,6 @@
 # DZAObliqueFillAnimatorView
 
-A custom view that haves an oblique transparent cut on the top and it can be filled with an animated circle
+A custom view that has an oblique transparent cut on the top and it can be filled with an animated circle
 
 A demo of the animation:
 
