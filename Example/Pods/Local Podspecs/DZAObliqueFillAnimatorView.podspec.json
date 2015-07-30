@@ -1,0 +1,26 @@
+{
+  "name": "DZAObliqueFillAnimatorView",
+  "version": "0.1.0",
+  "summary": "Custom view with an oblique transparent cut on the top",
+  "description": "A custom view that haves an oblique transparent cut on the top and it can be filled with an animated circle",
+  "homepage": "https://github.com/Dzamir/DZAObliqueFillAnimatorView",
+  "license": "MIT",
+  "authors": {
+    "Davide Di Stefano": "dzamirro@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Dzamir/DZAObliqueFillAnimatorView.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/dzamir",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "DZAObliqueFillAnimatorView": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

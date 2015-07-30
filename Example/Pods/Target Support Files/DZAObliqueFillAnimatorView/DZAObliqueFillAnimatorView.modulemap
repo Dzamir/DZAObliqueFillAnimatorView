@@ -1,0 +1,6 @@
+framework module DZAObliqueFillAnimatorView {
+  umbrella header "DZAObliqueFillAnimatorView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'DZAObliqueFillAnimatorView_Example', :exclusive => true do
+  pod "DZAObliqueFillAnimatorView", :path => "../"
+end
+
+target 'DZAObliqueFillAnimatorView_Tests', :exclusive => true do
+  pod "DZAObliqueFillAnimatorView", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+end

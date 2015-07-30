@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="DZAViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-Qh-pZv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-ql-GZd" customClass="DZAObliqueFillAnimatorView">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillPercentage">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                                        <color key="value" red="1" green="0.040183829109999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="startsFromLeft" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="circleOffset">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-Bz-eDI">
+                                <rect key="frame" x="14" y="91" width="33" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateTouchUpInside:" destination="whP-gf-Uak" eventType="touchUpInside" id="2by-VB-dKu"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BPg-BP-lNv">
+                                <rect key="frame" x="14" y="28" width="572" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="whP-gf-Uak" eventType="valueChanged" id="Oxu-jW-NYe"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pNq-Bz-eDI" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="14" id="17u-AC-Hm1"/>
+                            <constraint firstItem="Bdl-ql-GZd" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="60" id="6df-JT-8KQ"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Bdl-ql-GZd" secondAttribute="bottom" id="8f6-fI-yWi"/>
+                            <constraint firstItem="Bdl-ql-GZd" firstAttribute="top" secondItem="pNq-Bz-eDI" secondAttribute="bottom" constant="-41" id="GuR-TJ-IXk"/>
+                            <constraint firstItem="jsa-Qh-pZv" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="JQ0-Xn-8aj"/>
+                            <constraint firstAttribute="trailing" secondItem="Bdl-ql-GZd" secondAttribute="trailing" id="Yfe-Vc-dLj"/>
+                            <constraint firstItem="Bdl-ql-GZd" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="awE-ok-hL5"/>
+                            <constraint firstItem="BPg-BP-lNv" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="8" id="krU-3V-PVn"/>
+                            <constraint firstAttribute="trailing" secondItem="jsa-Qh-pZv" secondAttribute="trailing" id="lfL-Ge-GDW"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="jsa-Qh-pZv" secondAttribute="bottom" id="mdq-E1-FT5"/>
+                            <constraint firstItem="jsa-Qh-pZv" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="mxy-mx-xON"/>
+                            <constraint firstAttribute="trailing" secondItem="BPg-BP-lNv" secondAttribute="trailing" constant="16" id="yWS-qi-7jn"/>
+                            <constraint firstItem="BPg-BP-lNv" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="16" id="ykw-KF-thP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="obliqueView" destination="Bdl-ql-GZd" id="gHD-D3-Rfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="433"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gradient" width="960" height="600"/>
+    </resources>
+</document>
