@@ -21,7 +21,21 @@ Screenshots:
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+The view supports Interface Builder integration: you just need to drag a UIView and change the class to DZAObliqueFillAnimatorView
+
+![](https://raw.githubusercontent.com/Dzamir/DZAObliqueFillAnimatorView/master/4.png)
+
+From the IB you can change the parameters and colors to match your app style.
+
+From the code you call
+
+    [_obliqueView animateOpeningWithDuration:0.5 completion:nil];
+
+or 
+
+    [_obliqueView animateClosingWithDuration:0.5 completion:nil];
+
+to animate the transition.
 
 ## Installation
 

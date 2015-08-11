@@ -11,6 +11,8 @@
 
 @interface DZAViewController ()
 @property (weak, nonatomic) IBOutlet DZAObliqueFillAnimatorView *obliqueView;
+@property (readwrite, nonatomic) BOOL isOpened;
+
 
 @end
 
@@ -19,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    _isOpened = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,7 +32,17 @@
 
 - (IBAction)animateTouchUpInside:(id)sender
 {
-    [_obliqueView animateWithDuration:0.5];
+    if (_isOpened)
+    {
+        [_obliqueView animateOpeningWithDuration:0.5 completion:^{
+            _isOpened = !_isOpened;
+        }];
+    } else
+    {
+        [_obliqueView animateClosingWithDuration:0.5 completion:^{
+            _isOpened = !_isOpened;
+        }];
+    }
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)sender

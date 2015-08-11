@@ -13,8 +13,12 @@
     double _frameTimestamp;
     double _initialAnimationTimestamp;
     double _animationDuration;
+    double _animationInitialFillPercentage;
+    BOOL _isOpening;
     CADisplayLink *_displayLink;
 }
+
+@property (nonatomic, copy) void (^animationCompletion)(void);
 
 @end
 
@@ -25,6 +29,7 @@
     if (self = [super initWithFrame:aRect])
     {
         _isAnimating = NO;
+        _isOpening = NO;
         _frameTimestamp = -1;
         _initialAnimationTimestamp = -1;
         _startsFromLeft = YES;
@@ -83,17 +88,30 @@
 }
 
 // starts the fill animation
--(void) animateWithDuration:(double) duration
+-(void) animateOpeningWithDuration:(double) duration completion:(void(^)(void)) completion isOpening:(BOOL) isOpening;
 {
     if (!_isAnimating)
     {
+        self.animationCompletion = completion;
         _isAnimating = YES;
+        _isOpening = isOpening;
         _frameTimestamp = -1;
         _initialAnimationTimestamp = -1;
+        _animationInitialFillPercentage = (_isOpening? _fillPercentage: 1.0 - _fillPercentage);
         _animationDuration = duration;
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateAnimation:)];
         [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
+}
+
+-(void) animateOpeningWithDuration:(double) duration completion:(void(^)(void)) completion;
+{
+    [self animateOpeningWithDuration:duration completion:completion isOpening:YES];
+}
+
+-(void) animateClosingWithDuration:(double) duration completion:(void(^)(void)) completion;
+{
+    [self animateOpeningWithDuration:duration completion:completion isOpening:NO];
 }
 
 - (void) updateAnimation:(CADisplayLink *) displayLink
@@ -101,21 +119,25 @@
     double currentTime = [displayLink timestamp];
     if (_frameTimestamp < 0)
     {
-        _frameTimestamp = 0;
         _initialAnimationTimestamp = currentTime;
     }
     _frameTimestamp = currentTime;
-    double passedTimeFromStart = _frameTimestamp - _initialAnimationTimestamp;
+    double passedTimeFromStart = _frameTimestamp - _initialAnimationTimestamp + (_animationInitialFillPercentage * _animationDuration);
     _fillPercentage = passedTimeFromStart / _animationDuration;
+    if (!_isOpening)
+    {
+        _fillPercentage = 1.0 - _fillPercentage;
+    }
     [self setNeedsDisplay];
     
     if (passedTimeFromStart > _animationDuration)
     {
         [_displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
         _isAnimating = NO;
-        if (self.delegate)
+        if (self.animationCompletion)
         {
-            [self.delegate obliqueFillAnimatorViewDidCompleteAnimation:self];
+            self.animationCompletion();
+            self.animationCompletion = nil;
         }
     }
 }

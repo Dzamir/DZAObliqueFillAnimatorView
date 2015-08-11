@@ -10,11 +10,6 @@
 
 @class DZAObliqueFillAnimatorView;
 
-@protocol DZAObliqueFillAnimatorViewDelegate <NSObject>
-
--(void) obliqueFillAnimatorViewDidCompleteAnimation:(DZAObliqueFillAnimatorView *) obliqueFillAnimatorView;
-
-@end
 
 IB_DESIGNABLE
 @interface DZAObliqueFillAnimatorView : UIView
@@ -28,8 +23,8 @@ IB_DESIGNABLE
 
 @property (readonly, nonatomic) BOOL isAnimating;
 
-@property (nonatomic, assign) id<DZAObliqueFillAnimatorViewDelegate> delegate;
+-(void) animateOpeningWithDuration:(double) duration completion:(void(^)(void)) completion;
 
--(void) animateWithDuration:(double) duration;
+-(void) animateClosingWithDuration:(double) duration completion:(void(^)(void)) completion;
 
 @end

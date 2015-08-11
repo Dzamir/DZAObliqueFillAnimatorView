@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DZAObliqueFillAnimatorView"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Custom view with an oblique transparent cut on the top"
   s.description      = <<-DESC
                        A custom view that has an oblique transparent cut on the top and it can be filled with an animated circle
